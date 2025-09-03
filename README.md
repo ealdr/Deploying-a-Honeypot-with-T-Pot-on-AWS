@@ -64,7 +64,7 @@ The main tool I will be using to view and analyze the honeypot data is Kibana. I
 
 ## Data Findings and Analysis
 
-After leaving the honeypot online for three days, I collected the following data, which I viewed in Kibana:
+After leaving the honeypot online for 3 days, I collected the following data, which I viewed in Kibana:
 
 ### Overall Attacks
 <img width="3270" height="170" alt="image" src="https://github.com/user-attachments/assets/57235f09-5c08-4914-b31f-9d47e02757b6" />
@@ -76,10 +76,53 @@ As T-pot is a bundle of multiple honeypots of different types, this is an explan
   - **Honeytrap** is the general-purpose honeypot framework which listens on multiple ports and is designed to detect and log network-based attacks like scans.
   - **Dionaea** is a malware collection honeypot and mimics services like FTP and HTTP.
   - **CiscOASA** emulates the Cisco ASA firewall VPN service.
-  - **Tanner**
-  - **SentryPeer**
+  - **Tanner** is a web application honeypot and aims to capture SQL injections.
+  - **SentryPeer** detects SIP/VoIP attacks.
+  - **HOnEtyr4p** is similar to Honeytrap but specialized for more deception layers.
+  - **ConPot** simulates industrial control protocols like Siemens S7
+  - **Mailoney** emulates an open mail relay.
+  - **Adbhoney** exposes TCP port 5555 to attract malware targeting Android devices.
 
-- I recieved a total of 67,000 attacks
+
+I recieved a total of 67,000 attacks and about 72% were from Cowrie alone, which means attackers focus on SSH brute force.
+
+---
+
+### Ports
+
+The attacks focused on services that give remote access or file sharing. SSH on port 22 was the biggest target for brute force logins. VNC on port 5901 had attempts of remote access control, HTTP on port 80 showed exploitation attempts against web services. These targets show attackers were trying to gain control and spread malware.
+
+---
+
+### Attacker Reputation
+
+Most of the attacking traffic is tied to known attacker IPs (mainly mass scanners) and some were bots/crawlers.
 
 
 
+<img width="616" height="243" alt="image" src="https://github.com/user-attachments/assets/9c0fbecd-9d71-4e05-9e38-b845cea36840" />
+
+---
+
+### Geographic Breakdown
+On the first day the United States was leading with most attacks, but then on day 2 Thailand took over which I will discuss later.
+
+<img width="615" height="238" alt="image" src="https://github.com/user-attachments/assets/86fa3a95-a513-45fc-978f-a6ef6b2c9d7d" />
+
+Distribution shows attacks are global but concentrated in a few hotspots.
+
+<img width="463" height="217" alt="image" src="https://github.com/user-attachments/assets/f3b24679-562a-4336-b8c4-a7f6f4881dfb" />
+
+---
+
+### Credentials
+
+These two word clouds show the attempts of SSH username and password attempts. The bigger the word the more times it was tried.
+
+<img width="2505" height="348" alt="image" src="https://github.com/user-attachments/assets/8b6bce3b-687b-4e6f-bc99-99a0e883f556" />
+
+The most attempted password was `(empty)` which is just pressing `Enter` after it asks for a password while setting the OS up.
+
+---
+
+## Thailand Attack Surge on Day 2
