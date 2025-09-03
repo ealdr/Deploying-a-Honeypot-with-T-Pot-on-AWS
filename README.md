@@ -67,8 +67,19 @@ The main tool I will be using to view and analyze the honeypot data is Kibana. I
 After leaving the honeypot online for three days, I collected the following data, which I viewed in Kibana:
 
 ### Overall Attacks
+<img width="3270" height="170" alt="image" src="https://github.com/user-attachments/assets/57235f09-5c08-4914-b31f-9d47e02757b6" />
 
-- I recieved 
+
+
+As T-pot is a bundle of multiple honeypots of different types, this is an explanation of each one:
+  - **Cowrie** emulates SSH services and captures brute-force login attempts.
+  - **Honeytrap** is the general-purpose honeypot framework which listens on multiple ports and is designed to detect and log network-based attacks like scans.
+  - **Dionaea** is a malware collection honeypot and mimics services like FTP and HTTP.
+  - **CiscOASA** emulates the Cisco ASA firewall VPN service.
+  - **Tanner**
+  - **SentryPeer**
+
+- I recieved a total of 67,000 attacks
 
 
 
