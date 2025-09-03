@@ -1,4 +1,4 @@
-# Deploying-a-Honeypot-with-T-Pot-on-AWS
+# Deploying-a-Honeypot-with-T-Pot-on-AWS-and-analysis
 
 
 This project documents the deployment of a [T-Pot](https://github.com/telekom-security/tpotce) honeypot on an [AWS](https://aws.amazon.com/) [EC2](https://aws.amazon.com/ec2/) instance. My goal was to capture malicious traffic and analyze attack patterns.
@@ -47,10 +47,10 @@ I accepted the fingerprint warning and was connected as the ubuntu user. Once in
 I thenc loned the T-Pot repository with `git clone https://github.com/telekom-security/tpotce.git` and moved into the new directory. To start the installation, I ran: `./install.sh -s -t h -u <MY-USERNAME> -p <MY-PASSWORD>`.
 
 This is what each letter means:
-`-s` = This makes the script run without asking for confirmation.
-`-t h` = Sets the installation type to hive which is the full T-Pot installation that comes with the web interface and dashboards.
-`-u <MY-USERNAME>` = Defines the web interface username.
-`-p <MY-PASSWORD>` = Defines the web interface password.
+  - `-s` = This makes the script run without asking for confirmation.
+  - `-t h` = Sets the installation type to hive which is the full T-Pot installation that comes with the web interface and dashboards.
+  - `-u <MY-USERNAME>` = Defines the web interface username.
+  - `-p <MY-PASSWORD>` = Defines the web interface password.
 
 The script began setting up Docker by pulling all the honeypot images and once everything completed, the script prompted me to reboot, so I ran `sudo reboot`
 
@@ -64,7 +64,11 @@ The main tool I will be using to view and analyze the honeypot data is Kibana. I
 
 ## Data Findings and Analysis
 
-After leaving the honeypot online for several days, I collected the following data, which I viewed in Kibana:
+After leaving the honeypot online for three days, I collected the following data, which I viewed in Kibana:
+
+### Overall Attacks
+
+- I recieved 
 
 
 
