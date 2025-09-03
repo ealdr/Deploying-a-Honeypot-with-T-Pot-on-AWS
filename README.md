@@ -64,7 +64,7 @@ The main tool I will be using to view and analyze the honeypot data is Kibana. I
 
 ## Data Findings and Analysis
 
-After leaving the honeypot online for several days, the following patterns emerged from the collected data which I viewed in Kibana:
+After leaving the honeypot online for several days, I collected the following data, which I viewed in Kibana:
 
 
 
