@@ -1,6 +1,12 @@
 # Deploying-a-Honeypot-with-T-Pot-on-AWS
-## Overview
+
+
 This project documents the deployment of a [T-Pot](https://github.com/telekom-security/tpotce) honeypot on an [AWS](https://aws.amazon.com/) [EC2](https://aws.amazon.com/ec2/) instance. My goal was to capture malicious traffic and analyze attack patterns.
+
+---
+
+## Setup
+
 
 I first logged into my AWS dashboard/ console home and went to the EC2 service. From there, I launched a new instance and named it tpot-honeypot. 
 
@@ -8,7 +14,9 @@ For the operating system, I selected the Ubuntu Server 22.04 LTS AMI on 64-bit x
 
 Next, I created an encryption key pair so I could connect securely. I selected RSA as the type, `.pem` as the file format, and downloaded the file, naming it tpot-key.pem. After that, I created a new security group. For inbound rules, I added SSH on port 22 restricted to `my IP` so only I was able to SSH into the instance, I added a custom TCP rule on port 64297 open to `my IP` for the T-Pot dashboard, and I added an All TCP rule on ports 0–65535 open to 0.0.0.0/0 so the honeypots would be reachable by anyone. Outbound was left as all traffic. I also increased the volume size to 128 GB using gp3 storage because T-Pot pulls and runs many Docker containers, each with its own images, logs, and data. I then launched the instance.
 
-## Environment Setup
+---
+
+## Environment Setup Bullet Points
 
 - **Cloud provider**: AWS EC2  
   - **AMI**: Ubuntu Server 22.04 LTS  
@@ -20,6 +28,9 @@ Next, I created an encryption key pair so I could connect securely. I selected R
   - **SSH**: port 22/tcp, restricted to `my IP`  
   - **Dashboard**: port 64297/tcp, open to `my IP`
   - **Honeypot traffic**: all TCP 0–65535, open to `0.0.0.0/0`
+ 
+ ---
+    
 
 Once it was running, I checked the public IPv4 address which I coppied for later (`INSTANCE-PUBLIC-IP`). On my Windows PC, I moved the downloaded key file into my `.ssh` directory. I then fixed the key permissions using PowerShell with `icacls`, making sure only my user account had read access.
 
@@ -43,7 +54,15 @@ This is what each letter means:
 
 The script began setting up Docker by pulling all the honeypot images and once everything completed, the script prompted me to reboot, so I ran `sudo reboot`
 
-After it rebooted I opened by browser and went to: `https://<INSTANCE-PUBLIC-IP>`. Because T-Pot uses a self-signed certificate, I accepted the warning and continued. At the login page, I signed in with the username and password, this loaded the T-Pot dashboard, where I could see the attack map, Elasticvue, Kibana, and Spiderfoot.
+After it rebooted I opened by browser and went to: `https://<INSTANCE-PUBLIC-IP>`. Because T-Pot uses a self-signed certificate, I accepted the warning and continued. At the login page, I signed in with the username and password, this loaded the T-Pot dashboard, where I could see the attack map, [Elasticvue](https://elasticvue.com/), [Kibana](https://www.elastic.co/kibana), and [Spiderfoot](https://github.com/smicallef/spiderfoot).
+
+The main tool I will be using to view and analyze the honeypot data is Kibana. I can explore the raw attack data, filter by fields such as source IP, attack type, or timestamp, and visualizations that help me understand trends.
+
+### ****I then left the honeypot online for a few days to collect attack data.****
+
+---
+
+## Data Findings and Analysis
 
 
 
