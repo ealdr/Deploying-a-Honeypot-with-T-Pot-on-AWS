@@ -96,6 +96,15 @@ I received a total of 67,000 attacks and about 72% were from Cowrie alone, which
 
 ---
 
+### Attack Map
+
+The T-pot dashboard also includes a live attack map to view incoming attacks, also known as a **'pew pew map'**. Here is one of the screenshots I captured during the three days:
+<img width="2421" height="1220" alt="image" src="https://github.com/user-attachments/assets/88e06da1-273d-4ad7-9c19-2704ce60d05f" />
+
+Each coloured node represents a different service which is currently being attacked.
+
+---
+
 ### Ports
 
 The attacks focused on services that give remote access or file sharing. SSH on port 22 was the biggest target for brute force logins. VNC on port 5901 had attempts of remote access control, HTTP on port 80 showed exploitation attempts against web services. These targets show attackers were trying to gain control and spread malware.
