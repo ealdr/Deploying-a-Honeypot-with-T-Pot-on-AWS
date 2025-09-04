@@ -60,7 +60,7 @@ This is what each letter means:
   - `-u <MY-USERNAME>` = Defines the web interface username.
   - `-p <MY-PASSWORD>` = Defines the web interface password.
 
-The script began setting up Docker by pulling all the honeypot images and once everything completed, the script prompted me to reboot, so I ran `sudo reboot`
+The script began setting up Docker by pulling all the honeypot images and once everything completed, the script prompted me to reboot, so I ran `sudo reboot`.
 
 After it rebooted I opened by browser and went to: `https://<INSTANCE-PUBLIC-IP>`. Because T-Pot uses a self-signed certificate, I accepted the warning and continued. At the login page, I signed in with the username and password, this loaded the T-Pot dashboard, where I could see the attack map, [Elasticvue](https://elasticvue.com/), [Kibana](https://www.elastic.co/kibana), and [Spiderfoot](https://github.com/smicallef/spiderfoot).
 
@@ -87,7 +87,7 @@ As T-pot is a bunch of multiple honeypots of different types, here is an explana
   - **Tanner** is a web application honeypot and aims to capture SQL injections.
   - **SentryPeer** detects SIP/VoIP attacks.
   - **HOnEtyr4p** is similar to Honeytrap but specialized for more deception layers.
-  - **ConPot** simulates industrial control protocols like Siemens S7
+  - **ConPot** simulates industrial control protocols like Siemens S7.
   - **Mailoney** emulates an open mail relay.
   - **Adbhoney** exposes TCP port 5555 to attract malware targeting Android devices.
 
