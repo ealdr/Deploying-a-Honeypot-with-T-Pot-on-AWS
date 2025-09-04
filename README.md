@@ -155,7 +155,7 @@ These were the most attempted username and passwords used by the large scale SSH
 <img width="2526" height="350" alt="image" src="https://github.com/user-attachments/assets/d48deb50-5074-4075-93f2-31e02959fc58" />
 
 ## Final Thoughts / What I Learned
-I gained valuable skills in deploying and managing honeypots for monitoring malicious traffic, including setup and configuration on AWS. I developed a deep understanding of how attackers target exposed services and how to capture traffic in real time. It was also a rewarding experience that expanded my technical skill set and provided practical insights into real-world cyber threats.
+I gained valuable skills in deploying and managing honeypots for monitoring malicious traffic, including setup and configuration on AWS. I developed a deep understanding of how attackers target exposed services and how to capture traffic in real time. It was also a rewarding experience that expanded my skill set and provided insights into real-world cyber threats.
 
 ##  Thanks for Reading
 
