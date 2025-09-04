@@ -5,6 +5,14 @@ This project documents the deployment of a [T-Pot](https://github.com/telekom-se
 
 ---
 
+## What is a Honeypot and what is T-pot?
+
+**'A honeypot is a computer security mechanism set to detect, deflect, or, in some manner, counteract attempts at unauthorized use of information systems. Generally, a honeypot consists of data (for example, in a network site) that appears to be a legitimate part of the site which contains information or resources of value to attackers.'** -[Wikipedia](https://en.wikipedia.org/wiki/Honeypot_(computing))
+
+**'T-Pot is the all in one, optionally distributed, multiarch (amd64, arm64) honeypot plattform, supporting 20+ honeypots and countless visualization options using the Elastic Stack, animated live attack maps'** - [T-pot](https://github.com/telekom-security/tpotce)
+
+---
+
 ## Setup
 
 
